@@ -9,7 +9,7 @@ spec:
   - host: kumernitor.com
     http:
       paths:
-      - path: /
+      - path: /api
         pathType: Prefix
         backend:
           service:
