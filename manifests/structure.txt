@@ -1,0 +1,11 @@
+k8s-manifests/
+├── backend/
+│   └── deployment.yaml
+├── frontend/
+│   └── deployment.yaml
+├── mysql/
+│   ├── deployment.yaml
+│   └── secret.yaml
+├── ingress/
+│   └── ingress.yaml
+└── structure.txt
