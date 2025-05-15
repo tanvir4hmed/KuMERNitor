@@ -1,6 +1,6 @@
 //importing neccessary libraries for this modal which will delete users from the database and we will be using this as a functional component for table
 import { useState } from "react";
-// axios import removed
+import axios from "axios";
 import { toast } from "sonner";
 
 //starting of the functional component which will delete users
@@ -22,12 +22,10 @@ function DeleteUserModal() {
     }
     try {
       //delete req to the server with data payload
-      const res = await fetch(import.meta.env.VITE_API_URL, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id }),
+      const res = await axios.request({
+        method: "delete",
+        url: import.meta.env.VITE_API_URL,
+        data: { id }
       });
 
       //incase of success

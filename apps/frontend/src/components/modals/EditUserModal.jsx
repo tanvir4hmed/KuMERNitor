@@ -1,7 +1,7 @@
 //importing neccessary libraries for this modal which will edit users in the database and we will be using this as a functional component for table
 import { useState } from "react";
 import { toast } from "sonner";
-// axios import removed
+import axios from "axios";
 
 //starting of the functional component which edits the user in the database
 function EditUserModal() {
@@ -33,13 +33,11 @@ function EditUserModal() {
       return;
     }
     try {
-      //put req to server using fetch
-      const res = await fetch(import.meta.env.VITE_API_URL, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id, name, email }),
+      //put req to server
+      const res = await axios.put(import.meta.env.VITE_API_URL, {
+        id,
+        name,
+        email
       });
 
       //incase of success
@@ -53,6 +51,7 @@ function EditUserModal() {
         setTimeout(() => {
           location.reload();
         }, 3000);
+
       }
     } catch (error) {
       //incase of error
@@ -60,7 +59,7 @@ function EditUserModal() {
       toast.error("Error Editing User");
     }
   };
-  //using bootstrap pre built components
+//using bootstrap pre built components
   return (
     <>
       <button
