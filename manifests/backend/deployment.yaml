@@ -31,4 +31,4 @@ spec:
                   name: mysql-secret
                   key: password
             - name: DB_DATABASE
-              value: project
+              value: kumernitor
