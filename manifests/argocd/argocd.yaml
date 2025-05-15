@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/tanvir4hmed/KuMERNitor.git
-    targetRevision: v1.52
+    targetRevision: master
     path: manifests
   destination:
     server: https://kubernetes.default.svc
