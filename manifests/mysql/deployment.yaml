@@ -21,7 +21,7 @@ spec:
                   name: mysql-secret
                   key: password
             - name: MYSQL_DATABASE
-              value: project
+              value: kumernitor
             - name: MYSQL_USER
               valueFrom:
                 secretKeyRef:
