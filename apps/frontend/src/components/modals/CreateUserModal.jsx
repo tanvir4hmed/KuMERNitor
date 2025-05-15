@@ -1,7 +1,7 @@
 //importing neccessary libraries for this modal which will add users to the database and we will be using this as a functional component for table
 import { useState } from "react";
 import { toast } from "sonner";
-import axios from "axios";
+// axios import removed
 
 //starting of the functional component which takes a argument inside for adding the user to the user aray for dynamic display witout any reload
 function CreateUserModal({ addUser }) {
@@ -29,17 +29,26 @@ function CreateUserModal({ addUser }) {
 
     try {
       //post req to server
-      const res = await axios.post(import.meta.env.VITE_API_URL, {
-        name,
-        email
+      const res = await fetch(import.meta.env.VITE_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+        }),
       });
 
       //incase of success
       if (res.status === 201) {
+        const data = await res.json();
         toast.success("User Created");
-        addUser(res.data); // add the new user to the list
+        addUser(data); // add the new user to the list
         setName(""); //empty the fields after successful operation
         setEmail(""); //empty the fields after successful operation
+      } else {
+        toast.error("Error Creating User");
       }
     } catch (error) {
       //incase of error
