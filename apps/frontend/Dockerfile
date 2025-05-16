@@ -1,22 +1,29 @@
-# Stage 1: Development (Optional)
-FROM node:18-alpine3.20 as dev
+# Build stage
+FROM node:18-alpine3.20 as build
+
 WORKDIR /app
 
-# Copy package.json and package-lock.json
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Define build-time argument for environment variable
-ARG VITE_API_URL
-ENV VITE_API_URL=${VITE_API_URL}
-
-# Copy all other application files
 COPY . .
 
-# Expose the port where your app will run (default: 5000)
+# Build the app (generates /dist folder)
+RUN npm run build
+
+# Production stage
+FROM node:18-alpine3.20
+
+WORKDIR /app
+
+# Install 'serve' globally to serve static files
+RUN npm install -g serve
+
+# Copy built files from build stage
+COPY --from=build /app/dist ./dist
+
+# Expose port 5000
 EXPOSE 5000
 
-# Run the app with "host" set to 0.0.0.0
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+# Serve the static files on port 5000
+CMD ["serve", "-s", "dist", "-l", "5000"]
