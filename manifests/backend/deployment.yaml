@@ -18,7 +18,7 @@ spec:
           command: ['sh', '-c', 'until nc -z mysql 3306; do echo waiting for mysql; sleep 2; done;']
       containers:
         - name: backend
-          image: tanvir4hmed/backend-app:v2
+          image: tanvir4hmed/backend-app:v3
           ports:
             - containerPort: 3000
           env:
