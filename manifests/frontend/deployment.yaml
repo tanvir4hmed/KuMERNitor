@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: tanvir4hmed/frontend-app:v3
+          image: tanvir4hmed/frontend-app:v4
           ports:
             - containerPort: 5000
           env:
             - name: VITE_API_URL
-              value: http://kumernitor.local/api
+              value: http://backend:3000/api"
