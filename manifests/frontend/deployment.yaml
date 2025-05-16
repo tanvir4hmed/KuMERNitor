@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: frontend
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: tanvir4hmed/frontend-app:v2
+          image: tanvir4hmed/frontend-app:v3
           ports:
             - containerPort: 5000
           env:
