@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: tanvir4hmed/backend-app:v1
+          image: tanvir4hmed/backend-app:v2
           ports:
             - containerPort: 3000
           env:
