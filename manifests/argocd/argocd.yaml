@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/tanvir4hmed/KuMERNitor.git
+    repoURL: https://github.com/tanvir4hmed/kuMERNitor.git
     targetRevision: master
     path: manifests
   destination:
