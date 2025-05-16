@@ -28,7 +28,7 @@ let pool;
     });
 
     // use the router
-    app.use("/", router);
+    app.use("/api", router);
 
     // start the server
     app.listen(port, () => {
