@@ -3,6 +3,12 @@ kind: Application
 metadata:
   name: kumernitor
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: frontend=tanvir4hmed/frontend-app,backend=tanvir4hmed/backend-app
+    argocd-image-updater.argoproj.io/frontend.update-strategy: latest
+    argocd-image-updater.argoproj.io/backend.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: master
 spec:
   project: default
   source:
@@ -18,4 +24,3 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-
