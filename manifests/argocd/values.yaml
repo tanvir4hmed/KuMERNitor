@@ -1,0 +1,4 @@
+configs:
+  cm:
+    timeout.reconciliation: 5s
+    controller.periodicRefreshInterval: 30s
