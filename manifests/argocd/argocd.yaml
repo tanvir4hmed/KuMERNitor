@@ -9,6 +9,7 @@ metadata:
     argocd-image-updater.argoproj.io/backend.update-strategy: latest
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/git-branch: master
+    argocd-image-updater.argoproj.io/image.pull-secret: secret:argocd/dockerhub-secret
 spec:
   project: default
   source:
