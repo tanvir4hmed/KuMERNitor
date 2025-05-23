@@ -16,8 +16,7 @@ spec:
     repoURL: https://github.com/tanvir4hmed/kuMERNitor.git
     targetRevision: master
     path: manifests
-    directory:
-      recurse: true     # <-- enables recursive folder parsing
+    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: default
