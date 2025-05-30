@@ -20,3 +20,8 @@ resources:
   - argocd/ingress-argocd.yaml
   - argocd/rbac-argocd-image-updater.yaml
 
+images:
+  - name: tanvir4hmed/frontend-app
+    newTag: latest
+  - name: tanvir4hmed/backend-app
+    newTag: latest
