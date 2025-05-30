@@ -1,6 +1,22 @@
 resources:
+  # External secrets are assumed to be manually applied and are NOT included.
+  - metallb/metallb-config.yaml
+
+  - mysql/deployment.yaml
+  - mysql/service.yaml
+
   - backend/deployment.yaml
   - backend/service.yaml
+
   - frontend/deployment.yaml
   - frontend/service.yaml
+
+  - ingress/ingress.yaml
+  - ingress/service.yaml
+
+  # ArgoCD related (apply last)
+  - argocd/argocd.yaml
+  - argocd/argocd-image-updater.yaml
+  - argocd/ingress-argocd.yaml
+  - argocd/rbac-argocd-image-updater.yaml
 
