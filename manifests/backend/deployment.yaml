@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: index.docker.io/tanvir4hmed/backend-app
+    argocd-image-updater.argoproj.io/backend-app.update-strategy: name
+    argocd-image-updater.argoproj.io/backend-app.allow-tags: ^v\d+$
 spec:
   replicas: 2
   selector:

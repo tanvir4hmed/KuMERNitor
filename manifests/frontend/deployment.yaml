@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: index.docker.io/tanvir4hmed/frontend-app
+    argocd-image-updater.argoproj.io/frontend-app.update-strategy: name
+    argocd-image-updater.argoproj.io/frontend-app.allow-tags: ^v\d+$
 spec:
   replicas: 1
   selector:
