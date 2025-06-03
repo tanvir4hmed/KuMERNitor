@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: tanvir4hmed/frontend-app:v4
+          image: tanvir4hmed/frontend-app:latest
           ports:
             - containerPort: 5000
           env:
