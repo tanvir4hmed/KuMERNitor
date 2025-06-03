@@ -1,4 +1,0 @@
-kustomize:
-  images:
-  - tanvir4hmed/frontend-app:v5
-  - tanvir4hmed/backend-app:v3

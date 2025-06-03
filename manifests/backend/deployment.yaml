@@ -22,7 +22,7 @@ spec:
           command: ['sh', '-c', 'until nc -z mysql 3306; do echo waiting for mysql; sleep 2; done;']
       containers:
         - name: backend
-          image: tanvir4hmed/backend-app:v3
+          image: tanvir4hmed/backend-app:v3   # Will be auto-updated by Argo CD Image Updater
           ports:
             - containerPort: 3000
           env:
