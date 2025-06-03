@@ -22,4 +22,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-*.argocd-source-kumernitor.yaml
+#*.argocd-source-kumernitor.yaml
